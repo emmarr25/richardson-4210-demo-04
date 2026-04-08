@@ -7,9 +7,11 @@ app = create_app()
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'dev-secret-change-in-prod')
 
 # Register Blueprints
-from app.blueprints.examples import examples
+from app.blueprints.authors import authors_bp
+from app.blueprints.books import books_bp
 
-app.register_blueprint(examples, url_prefix='/example')
+app.register_blueprint(authors_bp)
+app.register_blueprint(books_bp)
 
 from . import routes
 

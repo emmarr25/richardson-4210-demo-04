@@ -1,14 +1,16 @@
--- Sample data for testing and development
--- Run this after creating the schema to populate with sample records
+-- Seed data for Authors and Books application
+-- Run this after schema.sql to populate with sample records
 
-INSERT INTO sample_table (first_name, last_name, date_of_birth) VALUES
-('John', 'Smith', '1990-05-15'),
-('Jane', 'Doe', '1985-08-22'),
-('Michael', 'Johnson', '1992-12-03'),
-('Sarah', 'Williams', '1988-03-17'),
-('David', 'Brown', '1995-09-08'),
-('Emily', 'Davis', '1987-11-25'),
-('Christopher', 'Miller', '1991-07-14'),
-('Ashley', 'Wilson', '1993-01-30'),
-('Matthew', 'Moore', '1989-06-12'),
-('Jessica', 'Taylor', '1994-04-28');
+INSERT INTO authors (first_name, last_name, date_of_birth, nationality, biography) VALUES
+('George', 'Orwell', '1903-06-25', 'British', 'Eric Arthur Blair, known by his pen name George Orwell, was an English novelist, essayist, journalist and critic. His work is characterised by lucid prose, social criticism, opposition to totalitarianism, and support of democratic socialism.'),
+('Toni', 'Morrison', '1931-02-18', 'American', 'Toni Morrison was an American novelist, essayist, book editor, and college professor. Her first novel, The Bluest Eye, was published in 1970. She won the Pulitzer Prize and the American Book Award in 1988 for Beloved, and the Nobel Prize in Literature in 1993.'),
+('Gabriel', 'García Márquez', '1927-03-06', 'Colombian', 'Gabriel José de la Concordia García Márquez was a Colombian novelist, short-story writer, screenwriter, and journalist. He was awarded the Nobel Prize in Literature in 1982. He is best known for One Hundred Years of Solitude and is considered a pioneer of magical realism.'),
+('Jane', 'Austen', '1775-12-16', 'British', 'Jane Austen was an English novelist known primarily for her six major novels, which interpret, critique, and comment upon the British landed gentry at the end of the 18th century. Her works include Pride and Prejudice and Sense and Sensibility.');
+
+INSERT INTO books (title, author_id, isbn, publication_date, genre, price, description) VALUES
+('1984', 1, '978-0-452-28423-4', '1949-06-08', 'Dystopian Fiction', 14.99, 'A dystopian novel set in a totalitarian society ruled by Big Brother. Winston Smith works for the Ministry of Truth rewriting history, but secretly harbors rebellious thoughts against the Party.'),
+('Animal Farm', 1, '978-0-452-28424-1', '1945-08-17', 'Political Satire', 12.99, 'An allegorical novella in which animals on a farm overthrow their human owner, only to find their utopian ideals corrupted by the pigs who take power. A sharp critique of Stalinist Russia and totalitarianism.'),
+('Beloved', 2, '978-1-4000-3341-6', '1987-09-02', 'Historical Fiction', 16.99, 'Set after the American Civil War, this Pulitzer Prize-winning novel follows Sethe, a formerly enslaved woman haunted by the ghost of her deceased daughter. A profound exploration of trauma, memory, and the legacy of slavery.'),
+('Song of Solomon', 2, '978-1-4000-3342-3', '1977-09-01', 'Literary Fiction', 15.99, 'Following Macon "Milkman" Dead III as he searches for his identity and heritage, this novel weaves together African American folklore, history, and myth. Winner of the National Book Critics Circle Award.'),
+('One Hundred Years of Solitude', 3, '978-0-06-088328-7', '1967-05-30', 'Magical Realism', 17.99, 'The multi-generational story of the Buendía family in the fictional town of Macondo. A landmark of magical realism and Latin American literature, blending the fantastical with the mundane across a century of history.'),
+('Pride and Prejudice', 4, '978-0-14-143951-8', '1813-01-28', 'Romance', 13.99, 'The story of Elizabeth Bennet and her complex relationship with the proud Mr. Darcy. A witty and perceptive portrayal of early 19th-century English society, marriage, and manners that remains one of the most beloved novels in English literature.');
